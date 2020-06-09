@@ -1,6 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
-var webpackFn = require('./webpack.fn')
+var webpackFn = require('./webpack-fn')
 var envConfig = require('./env')
 var envKeyWord = (process.argv)[2]
 var env = envConfig[envKeyWord]

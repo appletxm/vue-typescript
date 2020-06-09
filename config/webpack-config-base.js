@@ -55,22 +55,22 @@ module.exports = function (envKeyWord, publicPath) {
             publicPath: (envKeyWord === 'development' || envKeyWord === 'mock') ? '../' : '../'
           }
         },
-        // {
-        //   test: /\.less$/,
-        //   use: ExtractTextPlugin.extract({
-        //     fallback: 'style-loader',
-        //     use: [
-        //       'css-loader', {
-        //         loader: 'postcss-loader',
-        //         options: {
-        //           sourceMap: true,
-        //           plugins: () => [autoprefixer({ browsers: ['iOS >= 7', 'Android >= 4.1'] })]
-        //         }
-        //       },
-        //       'less-loader'
-        //     ]
-        //   })
-        // },
+        {
+          test: /\.less$/,
+          use: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: [
+              'css-loader', {
+                loader: 'postcss-loader',
+                options: {
+                  sourceMap: true,
+                  plugins: () => [autoprefixer()]
+                }
+              },
+              'less-loader'
+            ]
+          })
+        },
         {
           test: /\.html$/,
           loader: 'html-loader',

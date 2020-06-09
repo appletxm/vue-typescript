@@ -1,7 +1,7 @@
 var path = require('path')
 var HtmlWebPlugin = require('html-webpack-plugin')
 var CopyPlugin = require('copy-webpack-plugin')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
+// var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true'
 
 module.exports = {
@@ -88,8 +88,8 @@ module.exports = {
       new CopyPlugin([{
         from: path.join(__dirname, '../src/assets'),
         to: path.join(__dirname, '../dist/assets')
-      }]),
-      new ExtractTextPlugin(cssPath)
+      }])
+      // new ExtractTextPlugin(cssPath)
     )
 
     return webpackConfig
