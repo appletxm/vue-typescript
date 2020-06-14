@@ -102,7 +102,7 @@ module.exports = function (envKeyWord, env) {
       extensions: ['.js', '.vue', '.less', '.css', '.html', '.json', '.ts', '.tsx'],
       alias: {
         // 'vue$': 'vue/dist/vue.esm.js',
-        // 'vue': '@vue/composition-api',
+        // 'vue': 'vue-next/packages/vue',
         '@': path.join(__dirname, '../src/'),
         'env.cfg': '',
         'pages': path.join(__dirname, '../src/js/pages/'),

@@ -1,7 +1,7 @@
 {
   "include": [
     "src/js/**/*.ts",
-    "src/js/**/*.vue", "src/js/index.js"
+    "src/js/**/*.tsx"
   ],
   "exclude": [
     "node_modules/**/*",
