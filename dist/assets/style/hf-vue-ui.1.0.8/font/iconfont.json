@@ -1,0 +1,471 @@
+{
+  "id": "1437471",
+  "name": "hf-vue-ui",
+  "font_family": "hf-ui-icon",
+  "css_prefix_text": "ui-icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "11528229",
+      "name": "放大-line-currency-amplification",
+      "font_class": "line-currency-amplification",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "11528232",
+      "name": "编辑-line-currency-edit",
+      "font_class": "line-currency-edit",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "11528233",
+      "name": "勾-line-currency-tick",
+      "font_class": "line-currency-tick",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "11528234",
+      "name": "减少-line-currency-cut back",
+      "font_class": "line-currency-cutback",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "11528235",
+      "name": "加载-line-currency-loading",
+      "font_class": "line-currency-loading",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "11528236",
+      "name": "关闭-line-currency-close",
+      "font_class": "line-currency-close",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "11528237",
+      "name": "箭头左-line-direction-arrow left",
+      "font_class": "line-direction-arrowleft",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "11528238",
+      "name": "箭头下-line-direction-arrow down",
+      "font_class": "line-direction-arrowdown",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "11528239",
+      "name": "箭头上-line-direction-arrow up",
+      "font_class": "line-direction-arrowup",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "11528240",
+      "name": "垃圾箱-line-currency-rubbish",
+      "font_class": "line-currency-rubbish",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "11528241",
+      "name": "上-line-direction-up",
+      "font_class": "line-direction-up",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "11528242",
+      "name": "上传-line-currency-upload",
+      "font_class": "line-currency-upload",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "11528243",
+      "name": "日期-line-currency-date",
+      "font_class": "line-currency-date",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "11528244",
+      "name": "箭头右-line-direction-arrow right",
+      "font_class": "line-direction-arrowright",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "11528246",
+      "name": "收起-line-currency-collapse",
+      "font_class": "line-currency-collapse",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "11528247",
+      "name": "时间-line-currency-time",
+      "font_class": "line-currency-time",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "11528248",
+      "name": "刷新-line-currency-refresh",
+      "font_class": "line-currency-refresh",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "11528250",
+      "name": "添加-line-currency-add to",
+      "font_class": "currency-addto",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "11528251",
+      "name": "搜索-line-currency-search",
+      "font_class": "line-currency-search",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "11528252",
+      "name": "下-line-direction-down",
+      "font_class": "line-direction-down",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "11528253",
+      "name": "双重右-line-direction-double right",
+      "font_class": "line-direction-doubleright",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "11528254",
+      "name": "下载-line-currency-down",
+      "font_class": "line-currency-down",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
+      "icon_id": "11528257",
+      "name": "显示-line-currency-display",
+      "font_class": "line-currency-display",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "11528258",
+      "name": "右-line-direction-right",
+      "font_class": "line-direction-right",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "11528260",
+      "name": "隐藏-line-currency-hide",
+      "font_class": "line-currency-hide",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "11528262",
+      "name": "展开-line-currency-expand",
+      "font_class": "line-currency-expand",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
+      "icon_id": "11528263",
+      "name": "左-line-direction-left",
+      "font_class": "line-direction-left",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "11528264",
+      "name": "左-line-direction-double left",
+      "font_class": "line-direction-doubleleft",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "11529067",
+      "name": "上-fill-direction-up",
+      "font_class": "fill-direction-up",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    },
+    {
+      "icon_id": "11529068",
+      "name": "下-fill-direction-down",
+      "font_class": "fill-direction-down",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "11529069",
+      "name": "右-fill-direction-right",
+      "font_class": "fill-direction-right",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
+      "icon_id": "11529070",
+      "name": "左-fill-direction-left",
+      "font_class": "fill-direction-left",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "11529090",
+      "name": "用户-line-currency-user",
+      "font_class": "line-currency-user",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "11529091",
+      "name": "设置-line-currency-setting",
+      "font_class": "line-currency-setting",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "11529092",
+      "name": "星星-line-currency-star",
+      "font_class": "line-currency-star",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "11529704",
+      "name": "回到顶部-fill-currency-top",
+      "font_class": "fill-currency-top",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
+      "icon_id": "11530183",
+      "name": "播放-line-currency-play",
+      "font_class": "line-currency-play",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "11575117",
+      "name": "暂停-line-currency-time out",
+      "font_class": "line-currency-timeout",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "11577963",
+      "name": "箭头左-line-direction-arrow left",
+      "font_class": "line-direction-arrowleft1",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "11616623",
+      "name": "更多-fill-currency-more",
+      "font_class": "fill-currency-more",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "11616624",
+      "name": "更多-line-currency-more",
+      "font_class": "line-currency-more",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+      "icon_id": "11710849",
+      "name": "试卷-line-currency-examination paper",
+      "font_class": "line-currency-examinationpaper",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "11710850",
+      "name": "教育资源-line-currency-education resources",
+      "font_class": "jiaoyuziyuan-line-currency-educationresources",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    },
+    {
+      "icon_id": "11710851",
+      "name": "资源统计-line-currency-resource statistics",
+      "font_class": "line-currency-resourcestatistics",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "11710852",
+      "name": "基础信息管理-line-currency-basic information",
+      "font_class": "line-currency-basicinformation",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "11710896",
+      "name": "试题-line-currency-test questions",
+      "font_class": "line-currency-testquestions1",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "11711477",
+      "name": "倾斜-line-currency-tilt",
+      "font_class": "line-currency-tilt",
+      "unicode": "e634",
+      "unicode_decimal": 58932
+    },
+    {
+      "icon_id": "11711479",
+      "name": "垃圾箱-line-currency-rubbish",
+      "font_class": "line-currency-rubbish1",
+      "unicode": "e636",
+      "unicode_decimal": 58934
+    },
+    {
+      "icon_id": "11713226",
+      "name": "撤销-line-currency-cancel",
+      "font_class": "line-currency-cancel1",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "11713228",
+      "name": "重做-line-currency-redo",
+      "font_class": "line-currency-redo1",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
+      "icon_id": "11715030",
+      "name": "问号-line-currency-question",
+      "font_class": "line-currency-question1",
+      "unicode": "e632",
+      "unicode_decimal": 58930
+    },
+    {
+      "icon_id": "11715031",
+      "name": "感叹号-line-currency-exclamation",
+      "font_class": "line-currency-exclamation1",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "11715291",
+      "name": "括号-line-currency-brackets",
+      "font_class": "line-currency-brackets",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "11715292",
+      "name": "加下划线-line-currency-underlined",
+      "font_class": "line-currency-underlined",
+      "unicode": "e639",
+      "unicode_decimal": 58937
+    },
+    {
+      "icon_id": "11715327",
+      "name": "插入横线-line-currency-Insert horizontal line",
+      "font_class": "line-currency-inserthorizontalline",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
+      "icon_id": "11720127",
+      "name": "星星-fill-currency-star",
+      "font_class": "fill-currency-star1",
+      "unicode": "e63c",
+      "unicode_decimal": 58940
+    },
+    {
+      "icon_id": "11722023",
+      "name": "倒序-fill-currency-reverse order",
+      "font_class": "fill-currency-reverseorder",
+      "unicode": "e63b",
+      "unicode_decimal": 58939
+    },
+    {
+      "icon_id": "11724408",
+      "name": "图片-line-currency-image",
+      "font_class": "line-currency-image",
+      "unicode": "e637",
+      "unicode_decimal": 58935
+    },
+    {
+      "icon_id": "11729490",
+      "name": "公式-line-currency-formula",
+      "font_class": "line-currency-formula",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "11729505",
+      "name": "设置-fill-currency-setting",
+      "font_class": "fill-currency-setting",
+      "unicode": "e63d",
+      "unicode_decimal": 58941
+    },
+    {
+      "icon_id": "11847505",
+      "name": "学校-line-currency-school",
+      "font_class": "line-currency-school",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    },
+    {
+      "icon_id": "11847506",
+      "name": "旗子-fill-currency-flag",
+      "font_class": "fill-currency-flag",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    },
+    {
+      "icon_id": "11896672",
+      "name": "=line-currency-exclamation",
+      "font_class": "line-currency-exclamation",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
+      "icon_id": "11896673",
+      "name": "currency-success",
+      "font_class": "currency-success",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    },
+    {
+      "icon_id": "11896674",
+      "name": "line-currency-failure",
+      "font_class": "line-currency-failure",
+      "unicode": "e644",
+      "unicode_decimal": 58948
+    },
+    {
+      "icon_id": "11896675",
+      "name": "line-currency-question",
+      "font_class": "line-currency-question",
+      "unicode": "e645",
+      "unicode_decimal": 58949
+    }
+  ]
+}

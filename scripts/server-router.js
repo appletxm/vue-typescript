@@ -1,113 +1,29 @@
-var path = require('path'),
-  fs = require('fs'),
-  serverProxy = require('./server-proxy'),
-  isMock = false,
-  serverRouter,
-  env = require('../config/env')
+const {
+  assignRouter,
+  routerRootPath,
+  routerUploadSingleFile,
+  routerImgPath,
+  routerHtmlPath,
+  routerJsFile
+} = require('./server-router-handle')
 
-function getMockFile (reqPath, res) {
-  reqPath = reqPath.replace('/api', '')
-  reqPath = path.join(__dirname, '../mock' + reqPath)
-
-  console.info('[req info mock]', reqPath)
-
-  fs.readFile(reqPath, function (err, result) {
-    var result = JSON.parse(String(result))
-    if (err) {
-      res.send(err)
-    }else {
-      res.set('content-type', 'application/json')
-      res.send(result)
-    }
-    res.end()
-  })
-}
-
-function getProxyConfig (req) {
-  // rfucenterApi: '', // http://10.60.65.181:6080 
-  // rfExpressApi: '', // http://10.60.65.181:8080
-  // env['development']['rfucenterApi']
-
-  var rfExpressApi = {
-    // dev env
-    host: '10.60.64.132',
-    port: '8080'
-
-  // test env
-  // host: '10.60.32.120',
-  // port: '8080'
-  }
-  var rfucenterApi = {
-    // dev env
-    // host: '10.60.65.181',
-    // port: '6080'
-
-    // test env
-    host: '10.60.32.120',
-    port: '8081'
-  }
-
-  if (('/rf_express').indexOf(req.baseUrl) >= 0) {
-    return rfExpressApi
-  }else {
-    return rfucenterApi
-  }
-}
-
-function assignRouter (req, res, next) {
-  var reqPath = req.originalUrl
-
-  if (process.env.NODE_ENV === 'mock') {
-    isMock = true
-    console.log('mock reqPath', reqPath)
-    getMockFile(reqPath + '.json', res)
-  }else if (process.env.NODE_ENV === 'development') {
-    if ((/\/kdn/).test(req.originalUrl)) {
-      req.originaUrl = '/Ebusiness/EbusinessOrderHandle.aspx'
-      serverProxy.doProxy({
-        host: 'api.kdniao.cc',
-        port: '80'
-      }, req, res)
-    } else {
-      serverProxy.doProxy(getProxyConfig(req), req, res)
-    }
-  }
-  if (next) {
-    next()
-  }
-}
-
-serverRouter = {
+const serverRouter = {
   '*': function (req, res, next) {
-    console.info('[req info]', req.path, req.baseUrl, req.params)
+    console.info(`HTTP [${req.method}]`, req.path, req.baseUrl, req.params)
     next()
   },
 
-  '/rf_express': assignRouter,
+  '/api': assignRouter,
 
-  '/rfucenter': assignRouter,
+  '/': routerRootPath,
 
-  '/kdn': assignRouter,
+  'html': routerHtmlPath,
 
-  '/': function (req, res, compiler, next) {
-    // TODO compiler.outputPath is equal to the webpack publickPath
-    var filename = path.join(compiler.outputPath, 'index.html')
-    // console.info('####', compiler.outputPath, path.join(compiler.outputPath, 'index.html'))
+  'image': routerImgPath,
 
-    compiler.outputFileSystem.readFile(filename, function (err, result) {
-      if (err) {
-        res.send(err)
-      }else {
-        res.set('content-type', 'text/html')
-        res.send(result)
-      }
-      res.end()
+  'js': routerJsFile,
 
-      if (next) {
-        next()
-      }
-    })
-  }
+  'uploadSingleFile': routerUploadSingleFile
 }
 
 module.exports = serverRouter

@@ -1,84 +1,77 @@
-var express = require('express')
-var webpack = require('webpack')
-var path = require('path')
-var webpackDevMiddleware = require('webpack-dev-middleware')
-var webpackHotMiddleware = require('webpack-hot-middleware')
-var envConfig = require('../config/env')
-var webpackConfig = require('../config/webpack-config')
-var serverRouter = require('./server-router')
-var open = require('open')
-var app = express()
-var compiler = webpack(webpackConfig)
-var host = envConfig['development']['host']
-var port = envConfig['development']['port']
+const express = require('express')
+const webpack = require('webpack')
+const path = require('path')
+const fs = require('fs')
+const chalk = require('chalk')
+const webpackDevMiddleware = require('webpack-dev-middleware')
+const webpackHotMiddleware = require('webpack-hot-middleware')
+const httpProxyMiddleware = require('http-proxy-middleware')
+const envConfig = require('../config/env')
+const webpackConfig = require('../config/webpack.config')
+const serverRouter = require('./server-router')
+const app = express()
+const compiler = webpack(webpackConfig)
+const envKey = process.argv[2] || 'development'
+const envCfg = envConfig[envKey]
+const host = envCfg['host']
+const port = envCfg['port']
+const proxyTarget = envCfg['proxy']
+const ipAddress = require('ip').address()
+const defaultIp = '0.0.0.0'
 
-process.env.NODE_ENV = process.argv && process.argv.length >= 2 ? (process.argv)[2] : 'development'
+// const multer = require('multer')
+// const upload = multer({ dest: 'uploads/' })
 
-// compiler.watch({
-//   aggregateTimeout: 300,
-//   poll: 1000
-// }, function (error, status) {})
+process.env.NODE_ENV = envKey
+console.info('****current mode****', envKey)
 
-// console.info( process.argv, process.env.NODE_ENV)
-// console.info(compiler.outputPath, path.join(compiler.outputPath, 'index.html'))
-// attach to the compiler & the server
-app.use(webpackDevMiddleware(compiler, {
-  // public path should be the same with webpack config
+const middleWare = webpackDevMiddleware(compiler, {
+  // Notice: public path should be the same with webpack config
   publicPath: webpackConfig.output.publicPath,
+  hot: true,
   noInfo: true,
-  stats: {
-    colors: true
-  }
-}))
-
+  stats: 'errors-only'
+})
+app.use(middleWare)
 app.use(webpackHotMiddleware(compiler))
-
 app.use(express.static(__dirname + '/../dist'))
-
 app.use('*', serverRouter['*'])
 
-app.use('/rf_express', function (req, res) {
-  serverRouter['/rf_express'](req, res)
+const apiConfig = envCfg['api'] ? envCfg['api'] : ['/user/*', '/menu/*', '/config/*', '/codeType/*', '/userRoleRel/*', '/role/*', '/code/*']
+
+// single file
+// app.use(['*/oss/uploadFile'], upload.single('file'), function (req, res) {
+//   serverRouter['uploadSingleFile'](req, res)
+// })
+
+app.use(apiConfig, function (req, res) {
+  if (proxyTarget && proxyTarget['needOpen'] === true) {
+    httpProxyMiddleware({target: proxyTarget['url'], changeOrigin: true})(req, res)
+  } else {
+    serverRouter['/api'](req, res) // only mock data hint here
+  }
 })
 
-app.use('/rfucenter', function (req, res) {
-  serverRouter['/rfucenter'](req, res)
+app.use(['/*assets/images/*'], function (req, res) {
+  serverRouter['image'](req, res, compiler)
 })
 
-app.use('/kdn', function (req, res) {
-  serverRouter['/kdn'](req, res)
+app.use('/*.html', function (req, res) {
+  serverRouter['html'](req, res, compiler)
+})
+
+app.use('*.js', function (req, res) {
+  serverRouter['js'](req, res, compiler)
 })
 
 app.use('/', function (req, res) {
   serverRouter['/'](req, res, compiler)
 })
 
-// app.get('/', function(req, res) {
-//     //TODO compiler.outputPath is equal to the webpack publickPath
-//     var filename = path.join(compiler.outputPath,'index.html')
-//     //console.info('####', compiler.outputPath, path.join(compiler.outputPath, 'index.html'))
-//     console.info('[req info]', req.params)
-
-//     compiler.outputFileSystem.readFile(filename, function(err, result){
-//         if (err) {
-//             res.send(err)
-//         }else{
-//             res.set('content-type','text/html')
-//             res.send(result)
-//         }
-//         res.end()
-//     })
-// })
-
-// TODO why in windows the port must to be 8088, and in mac you can define anyother port
-// sometimes the npm start cli will get the "event: 160 erro" in windows you need to run the cli in the ternimal "rm -rf node_modules && npm cache clean --force && npm install" or the port still works need to end them
-app.listen(port, host, function (arg) {
-  var url = 'http://' + host + ':' + port
-
-  console.info('dev server started at: ', url)
-
-// setTimeout(function () {
-//   var openUrl = url
-//   open(openUrl, 'chrome')
-// }, 3000)
+app.listen(port, defaultIp, function () {
+  const localUrl = `http://localhost:${port}`
+  const ipUrl = `http://${ipAddress}:${port}`
+  console.info(`${chalk.magenta('dev server started at: ')}`)
+  console.info(`loclhost: ${chalk.blue(localUrl)}`)
+  console.info(`ip: ${chalk.blue(ipUrl)}`)
 })

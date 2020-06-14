@@ -1,4 +1,9 @@
-const mm: string = '123456'
-const txm: boolean = false
+// import 'core-js/stable'
+// import 'regenerator-runtime/runtime'
 
-export default {txm, mm}
+// import arr from './my'
+import { checkString } from './test'
+
+const res = checkString(123)
+
+console.info('res:', res)

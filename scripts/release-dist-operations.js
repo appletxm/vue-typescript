@@ -1,10 +1,10 @@
 const fs = require('fs')
 const path = require('path')
-const tar = require('tar')
+// const tar = require('tar')
 const chalk = require('chalk')
 
 module.exports = {
-  createTagFile(envKey) {
+  createTarFile(envKey) {
     const timestamp = new Date().getTime()
     const packageJson = require('../package.json')
     const versionId = `${packageJson.name}-${packageJson.version}-${timestamp}-${envKey}`
@@ -24,7 +24,7 @@ module.exports = {
             cwd: path.join(__dirname, '../dist/'),
             portable: true
           },
-          ['index.html', 'assets', 'css', 'js']
+          ['index.html', 'app.html', 'error.html', 'assets', 'css', 'js']
         )
         resolve({
           res,
@@ -43,9 +43,9 @@ module.exports = {
           throw new Error('npm run buildForProd failed, ' + error)
           process.exit(1)
         } else {
-          const reg = /\$tarName\(([^()]+)\)/g
-          const tarName = reg.exec(stdout)[1] + '.tar'
-          console.log(chalk.cyan(`\n Release success create tar name: \n ${tarName}`))
+          // const reg = /\$tarName\(([^()]+)\)/g
+          // const tarName = reg.exec(stdout)[1] + '.tar'
+          // console.log(chalk.cyan(`\n Release success create tar name: \n ${tarName}`))
           resolve(true)
         }
       })

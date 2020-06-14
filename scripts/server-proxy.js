@@ -9,7 +9,6 @@ var serverProxy = {
     var contentType = request['headers']['content-type']
 
     response.setHeader('content-type','application/json;charset=UTF-8')
-
     isMultipartData = contentType && contentType.indexOf('multipart/form-data') >= 0
     isWWWForm = contentType && contentType.indexOf('application/x-www-form-urlencoded') >= 0
 
