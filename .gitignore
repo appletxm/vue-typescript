@@ -18,3 +18,4 @@ coverage
 *.sln
 *.tar
 *.gz
+cfg.js

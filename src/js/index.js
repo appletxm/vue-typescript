@@ -1,14 +1,28 @@
-// import 'core-js/stable'
-// import 'regenerator-runtime/runtime'
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
 
-// import arr from './my'
-// import { checkString } from './test'
+import { checkString } from './test/test.ts'
 
-// const res = checkString(123)
+import { createApp,
+  ref,
+  computed
+} from 'vue'
+import App from './app/index.vue'
 
-// console.info('res:', res)
+const res = checkString(123)
 
-import { createApp } from 'vue'
-import App from './App.vue'
+console.info('res:', res)
 
 createApp(App).mount('#app')
+
+// import {
+//   ref,
+//   computed
+// } from 'vue'
+
+// const counter = ref(0)
+// const twiceTheCounter = computed(() => counter.value * 2)
+
+// counter.value = counter.value + 1
+// console.log(counter.value) // 1
+// console.log(twiceTheCounter.value) // 2

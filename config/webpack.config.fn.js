@@ -2,6 +2,7 @@ const path = require('path')
 const fs = require('fs')
 const TerserJSPlugin  = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin   = require('optimize-css-assets-webpack-plugin')
+const VueLoaderPlugin = require('vue-loader/dist/pluginWebpack4')
 const HtmlWebPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -103,6 +104,10 @@ module.exports = {
     let cssPath
     // let cssChunkPath
     const isDev = envKeyWord === 'development' || envKeyWord === 'mock'
+
+    webpackConfig.plugins.push(
+      new VueLoaderPlugin.default()
+    )
 
     if (isDev === true) {
       cssPath = 'css/[name].css'
