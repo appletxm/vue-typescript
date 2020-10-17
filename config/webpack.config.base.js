@@ -21,9 +21,11 @@ module.exports = function (envKeyWord, env) {
       pathinfo: isDev
     },
     module: {
-      rules: [{
+      rules: [
+        {
           enforce: 'pre',
-          test: /\.(js|vue|ts|tsx)$/,
+          // test: /\.(js|vue|ts|tsx)$/,
+          test: /\.(js|ts|tsx)$/,
           loader: 'eslint-loader',
           options: {
             fix: true
@@ -46,28 +48,21 @@ module.exports = function (envKeyWord, env) {
             name: isDev ? '[path][name].[ext]' : 'assets/images/[name].[ext]',
             outputPath: isDev ? '' : 'assets/images/',
             publicPath: isDev ? '../' : '../'
-            // name: function() {
-            //   console.info('******************************', JSON.stringify(arguments[0]))
-            //   const imgPath = JSON.stringify(arguments[0]).replace(/^.+src/, '').replace(/\\/g, '/')
-            //   return imgPath
-            // },
-            // outputPath: '',
-            // publicPath: '../'
           }
         },
+        
         {
           test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
           loader: 'url-loader',
           options: {
             limit: 4096,
             context: 'client',
-            // name: isDev ? '[path][name].[ext]' : 'assets/fonts/[name].[hash:7].[ext]',
-            // outputPath: isDev ? '' : 'assets/fonts/',
             publicPath: '../'
           }
         },
+
         {
-          test: /\.(sa|sc|c)ss$/,
+          test: /\.(le|c)ss$/,
           use: [{
               loader: MiniCssExtractPlugin.loader,
               options: {
@@ -86,11 +81,13 @@ module.exports = function (envKeyWord, env) {
             'less-loader'
           ]
         },
+
         {
           test: /\.vue$/,
           loader: 'vue-loader',
           include: [path.join(__dirname, '..', 'src')]
         },
+        
         {
           test: /\.html$/,
           loader: 'html-loader',

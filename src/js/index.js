@@ -1,17 +1,12 @@
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
 
-import { checkString } from './test/test.ts'
+// import { checkString } from './test/test.ts'
+// const res = checkString(123)
+// console.info('res:', res)
 
-import { createApp,
-  ref,
-  computed
-} from 'vue'
+import { createApp } from 'vue'
 import App from './app/index.vue'
-
-const res = checkString(123)
-
-console.info('res:', res)
 
 createApp(App).mount('#app')
 
