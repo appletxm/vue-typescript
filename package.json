@@ -52,7 +52,7 @@
     "eslint-plugin-import": "^2.21.2",
     "eslint-plugin-vue": "^7.0.0-beta.4",
     "event-source-polyfill": "0.0.12",
-    "express": "4.16.3",
+    "express": "4.19.2",
     "file-loader": "^6.0.0",
     "formidable": "^1.2.2",
     "html-loader": "^0.5.5",
